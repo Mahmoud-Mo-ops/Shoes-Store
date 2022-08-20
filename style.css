@@ -1,0 +1,733 @@
+/* to make moving slowly between each section */
+html{
+    scroll-behavior: smooth;
+}
+ *{
+  overflow-x: hidden;
+ }
+body {
+    font-family: "lato",sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* every nav will be like below */
+nav{
+    background-color: #111;
+    color: white;
+    padding: 20px 50px;
+}
+
+/*logo+searchBar+offer  style*/
+.navTop{
+    display: flex;
+    /* flex-direction: row;  default */
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Search bar style */
+.search{
+    display: flex;
+    /* this the default  */
+    /* flex-direction: row; */
+     align-items: center;
+     background-color: gray;
+     padding: 10px 20px;
+     border-radius: 10px;
+     margin: 0 15px;
+}
+
+/* input style */
+.search input{
+    border: none;
+    background-color: transparent;
+    color: #000;
+    font-size: 18px;
+    font-weight: 300;
+    outline: none;
+}
+/*search word style*/
+/*::pseudo-element-name*/
+/* Pseudo-elements behave in a similar way.*/
+ .search input::placeholder{
+    color: lightgray;
+}
+
+/* Limited Offer Style */
+.navItem .limitedOffer {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/*Limited offer style hover*/
+.navItem .limitedOffer::after{
+    content:'';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: green;
+    transition: width .3s;
+}
+
+.navItem .limitedOffer:hover::after{
+    width: 100%;
+}
+/*style shoes */
+.NavBottom{
+    display: flex;
+    justify-content: center;
+}
+
+.NavBottom .menuItem{
+    margin-right: 50px; 
+    color:lightgray;
+   cursor: pointer;
+   font-weight: 400;
+   transition: .3s;
+}
+/*Style shoes hover*/
+/* .NavBottom .menuItem:hover{
+    color: #fff;
+} */
+
+/* SLIDER BAR STYLE */
+
+.slider{
+  background: url("https://images.unsplash.com/photo-1604147495798-57beb5d6af73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80");
+ /*this property use the wohle background (5 pics) within 100%*/
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+  /* to hide the ScrolleX */
+  overflow-x: hidden;
+}
+/* style background */
+.sliderWrapper {
+    display: flex;
+    /*as we have 5 pics*/
+    width: 500vw;
+}
+/* style container of items */
+.sliderWrapper .sliderItem{
+position: relative;
+ width: 100vw;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+/*make the image on the circle*/
+.sliderWrapper .sliderItem .sliderImg{
+    z-index: 1;
+}
+/*style the circle*/
+.sliderWrapper .sliderItem .sliderBg{
+    width: 750px;
+    height: 750px;
+    border-radius: 50%;
+    position: absolute;
+}
+/*style the text*/
+.sliderWrapper .sliderItem .sliderTitle{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    color:wheat;
+    font-size: 60px;
+    font-weight: 900;
+    text-align: center;
+}
+/*style the price*/
+.sliderWrapper .sliderItem .sliderPrice{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: 60px;
+    font-weight: 300;
+    text-align: center;
+    color: wheat;
+    border: 1px solid gray;
+    z-index: 1;
+}
+/*style the Button*/
+.sliderWrapper .sliderItem .buyButton{
+ position: absolute;
+ top: 50%;
+ right: 10%;
+ font-size: 30px;
+ font-weight: 900;
+ color: #fff;
+ border: none solid floralwhite;
+ background-color: #111;
+ cursor: pointer;
+ outline: none;
+}
+/*style the Button within the hover*/
+.sliderWrapper .sliderItem .buyButton:hover{
+    color: #111;
+    background-color: floralwhite;
+    transition: .3s;
+}
+
+/*style backgroundColor(Shoes) for each ele using The :nth-child() pseudo-class */
+.sliderWrapper .sliderItem:nth-child(1) .sliderBg{
+  background-color:#369e62;
+}
+.sliderWrapper .sliderItem:nth-child(2) .sliderBg{
+    background-color:rebeccapurple;
+  }
+  .sliderWrapper .sliderItem:nth-child(3) .sliderBg{
+    background-color:teal;
+  }
+  .sliderWrapper .sliderItem:nth-child(4) .sliderBg{
+    background-color:cornflowerblue;
+  }
+  .sliderWrapper .sliderItem:nth-child(5) .sliderBg{
+    background-color:rgb(124,155,80);
+  }
+
+  /*style backgroundColor for each price */
+.sliderWrapper .sliderItem:nth-child(1) .sliderPrice{
+    color:#369e62;
+  }
+.sliderWrapper .sliderItem:nth-child(2) .sliderPrice{
+      color:rebeccapurple;
+    }
+.sliderWrapper .sliderItem:nth-child(3) .sliderPrice{
+      color:teal;
+    }
+.sliderWrapper .sliderItem:nth-child(4) .sliderPrice{
+      color:cornflowerblue;
+    }
+.sliderWrapper .sliderItem:nth-child(5) .sliderPrice{
+      color:rgb(124,155,80);
+    }
+    /* features */
+/*style the main wrap(features)*/
+    .features{
+        height: -800px;
+        display: flex;
+        /* width: 100vw; why this makes scrollX */
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px;
+        background-color:whitesmoke;
+    }
+
+/*style each div (feature)*/
+.features .feature{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/*style image*/
+.features .feature img{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+ /* style first Title */
+.features .feature .featureTitle{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px;
+}
+
+.features .feature .featureDesc{
+    color: gray;
+    width: 50%;
+   min-height: 100px;
+}
+
+/*products*/
+/* products/wrap styles */
+.product{
+    height: 100vh;
+    background-color:whitesmoke;
+    position: relative;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+    overflow: hidden;
+}
+
+/*payment Btn*/
+.payment {
+    width: 500px;
+    height: 500px;
+    background-color:rgb(126, 108, 9);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 10px 50px;
+    display: none;
+    flex-direction: column;
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .payTitle {
+    font-size: 20px;
+    color: lightgray;
+  }
+  
+  .name,.number,.Adresse{
+    display: flex;
+    flex-direction: column;
+  }
+  label {
+    font-size: 18px;
+    font-weight: 300;
+  }
+  
+  .payInput {
+    padding: 10px;
+    margin: 10px 0px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid gray;
+  }
+  
+  .payInput::placeholder {
+    color: rgb(163, 163, 163);
+  }
+  
+  .cardIcons {
+    display: flex;
+  }
+  
+  .cardIcon {
+    margin-right: 10px;
+  }
+  
+  .cardInfo {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .sm {
+    width: 30%;
+  }
+  
+  .payButton {
+    position: absolute;
+    height: 40px;
+    bottom: -40;
+    width: 100%;
+    left: 0;
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    background-color: #8ea73b;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: gray;
+    color: white;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 2px;
+  }
+
+/*image style*/
+.product .productImg{
+    width: 50%;
+}
+
+/*productDetails style*/
+.productDetails{
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 40%;
+    padding: 50px;
+}
+
+/*style title*/
+.productDetails .productTitle{
+    font-size: 75px;
+    font-weight: 600;
+}
+/*style description*/
+.productDetails .productDesc{
+    font-size: 24px;
+    color: gray;
+}
+
+/*style color and sizes*/
+
+.colors,.sizes{
+    display: flex;
+}
+
+/*style color*/
+.colors .color {
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    background-color: #000;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+/*change second item color*/
+.colors .color:nth-child(2){
+    background-color: darkblue;
+}
+
+/*style sizes*/ 
+.sizes .size{
+    padding: 5px 20px;
+    border: 1px solid #000;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+/*style Button*/
+.productDetails .productButton{
+   float: right;
+   border-radius: 15px; 
+   border: none;
+   width: 150px;
+   height: 40px;
+   padding: 10px 20px;
+   color: #fff;
+   background-color: rgb(126, 108, 9);
+   cursor: pointer;
+   font-size: 15px;
+   font-weight: 600 ;
+}
+/*style Hover Button*/
+.productDetails .productButton:hover{
+   background-color: rgba(126, 108, 9,.9);
+}
+
+
+/*style up Button*/
+.up{
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color:yellow;
+    color: #000;
+    font-size:30px;
+    font-weight: 900;
+    text-align: center;
+    width: 40px;
+    height: 30px;
+    position: fixed;
+    right: 10px;
+    bottom: 20px;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+/* style for each element size */
+.active {
+    background-color: #000;
+    color: #fff;
+}
+
+
+/*gallary sec*/
+.gallery{
+  display: flex;
+  padding: 50px;
+  width: auto;
+}
+
+.gallery .galleryItem{
+  /* flex: flex-grow flex-shrink flex-basis|auto|initial|inherit; */
+  flex: 1;
+  padding: 20px;
+}
+
+
+.gallery .galleryItem .galleryImg{
+  width: 100%;
+}
+
+/*new session sec*/
+
+.newSeason {
+  display: flex;
+}
+
+.newSeason .nsItem {
+  flex: 1;
+}
+
+.newSeason .nsItem:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+ color: #fff;
+ font-size: 30px;
+ font-weight: 600;
+}
+.newSeason .nsItem:nth-child(2) .nsButton{
+   background-color: #fff;
+   color: #000;
+   width: 200px;
+   height: 50px;
+   font-size: 15px;
+   font-weight: 500;
+   cursor: pointer;
+   margin-top: 15px;
+   outline: none;
+   border: none;
+}
+
+.newSeason .nsItem:nth-child(2) .nsButton:hover{
+  box-shadow: 2px 2px 2px wheat;
+  transition: all .2s;
+}
+.newSeason .nsItem .nsImg{
+  width: 100%;
+  height: 100%;
+}
+
+/*footer Sec*/
+footer{
+  display: flex;
+  background-color: rgb(0, 0, 0,.8);
+}
+
+.footerLeft{
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+}
+.fMenuTitle{
+  font-size: 16px;
+}
+.fList{
+  padding: 0;
+  list-style: none;
+}
+.fListItem{
+  margin-bottom: 10px;
+  color: gray;
+  cursor: pointer;
+}
+.footerRight{
+  flex: 1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.fInput{
+padding: 5px;
+width: 200px;
+}
+.fButton{
+  padding: 5px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+.fButton:hover{
+  background-color: rgba(0,0,0,.9);
+}
+.fIcons{
+  display: flex;
+  justify-content: flex-start;
+}
+.fIcon{
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000;
+  border-radius: 30px;
+  margin: 10px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.FIcon:hover{
+  background-color: yellow;
+}
+
+
+.fIcon:nth-child(1){
+  margin-left: 0;
+}
+.copyRight{
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1.1;
+}
+
+/* // X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { ... }
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) { ... }
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { ... }
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) { ... }
+
+// X-Large devices (large desktops, less than 1400px)
+@media (max-width: 1399.98px) { ... }
+
+// XX-Large devices (larger desktops)
+// No media query since the xxl breakpoint has no upper bound on its width */
+
+@media screen and (max-width:480px) {
+  nav{
+    padding: 20px;
+  }
+  .search{
+    display: none;
+  }
+  .NavBottom{
+    flex-wrap: wrap;
+  }
+  .NavBottom .menuItem{
+    margin: 20px;
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .slider{
+    clip-path: none;
+  }
+  .sliderImg{
+    width: 90%;
+  }
+  .sliderWrapper .sliderItem .sliderBg{ 
+    width: 100%;
+    height: 100%;
+  }
+  .sliderWrapper .sliderItem .sliderTitle{
+    display: none;
+  }
+  .sliderWrapper .sliderItem .sliderPrice{
+    /* explain later unset  */
+  top: unset;
+  bottom: -50;
+  left: 0;
+  background-color: lightgrey;
+  }
+  .sliderWrapper .sliderItem .buyButton{
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+  .features{
+    flex-direction: column;
+  }
+  .product{
+    clip-path: none ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .productImg{
+    width: 80%;
+  }
+
+  .productDetails{
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    top: 0;
+  }
+
+  .productDetails .productTitle{
+    font-size: 50px;
+    margin: 0;
+  }
+.productButton{
+  margin-top: 20px;
+}
+.payment{
+  width: auto;
+  padding-top: 0;
+}
+.payTitle{
+  font-size: 18px;
+}
+.gallery{
+  display: none;
+}
+.newSeason{
+  flex-direction: column;
+}
+.newSeason .nsItem:nth-child(2){
+  font-size: 20px;
+  padding: 50px;
+}
+.newSeason .nsItem:nth-child(2) .nsButton{
+ width: 150px;
+ font-size: 16px;
+ font-weight: 0;
+}
+footer{
+  flex-direction: column;
+  align-items: center;
+}
+
+.footerLeft{
+  padding: 20px;
+  width: 90%;
+}
+
+.footerRight{
+  padding: 20px;
+  width: 90%;
+  align-items: center;
+}
+
+.payment{
+  width: 90%;
+  padding: 20px;
+}
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media screen and (max-width: 991.98px) { 
+ .search{
+  padding: 8px 15px;
+  border-radius: 8px;
+ }
+ .product{
+  clip-path: none;
+ }
+ .productDetails{
+  top:0;
+  width: 50%;
+  padding: 10px;
+}
+ .productDetails .productTitle{
+  font-size: 50px;
+  font-weight: 400;
+}
+.productDetails .productDesc{
+  font-size: 20px;
+}
+.footerRight{
+  padding: 20px;
+}
+
+}
