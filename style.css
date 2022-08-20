@@ -27,6 +27,7 @@ nav{
 
 /* Search bar style */
 .search{
+  position: relative;
     display: flex;
     /* this the default  */
     /* flex-direction: row; */
@@ -45,6 +46,17 @@ nav{
     font-size: 18px;
     font-weight: 300;
     outline: none;
+}
+
+.noItem{
+  display: none;
+  position: absolute;
+  bottom:0;
+  left:45;
+  color: rgb(210, 12, 12);
+  font-style: italic;
+  font-size: 13px;
+  font-weight: 600;
 }
 /*search word style*/
 /*::pseudo-element-name*/

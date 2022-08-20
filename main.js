@@ -154,21 +154,33 @@ menuItem.forEach((ele)=>{
 })
 
 //make the search active
-
+const noItem=document.querySelector('.noItem')
 //select the input 
 const input =document.querySelector('.search input');
 input.addEventListener('keyup',(e)=>{
-  let result=e.target.value;
+  let result=e.target.value.toUpperCase();
   menuItem.forEach((e,indexCh)=>{
   if(e.innerHTML===result){
     wrapper.style.transform=`translate(${-100 * indexCh}vw)`
     e.style.color="wheat";
+    noItem.style.display="none"
     //MAKE THE PRODUCT SEC TO CHANGE AS WEll
   } else{
     e.style.color="gray";
+    noItem.style.display="block"
   }
   })
+  if(result===""){
+    noItem.style.display="none"
+  }
 })
+
+
+//onLoad 
+window.onload=function(){
+  menuItem[0].style.color="wheat"
+}
+
 
 /*UP BTN*/
 /*select Btn*/
