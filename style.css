@@ -1,10 +1,12 @@
+*{
+  box-sizing: border-box;
+  /* overflow-x: hidden; */
+}
 /* to make moving slowly between each section */
 html{
     scroll-behavior: smooth;
 }
- *{
-  overflow-x: hidden;
- }
+ 
 body {
     font-family: "lato",sans-serif;
     margin: 0;
@@ -14,7 +16,8 @@ body {
 nav{
     background-color: #111;
     color: white;
-    padding: 20px 50px;
+    padding: 15px 40px;
+    /* padding: 20px 50px; */
 }
 
 /*logo+searchBar+offer  style*/
@@ -47,7 +50,13 @@ nav{
     font-weight: 300;
     outline: none;
 }
-
+.navItem i {
+  display: none;
+  color: #03421d;
+  font-size: 25px;
+  position: absolute;
+  right: 70px;
+}
 .noItem{
   display: none;
   position: absolute;
@@ -65,6 +74,11 @@ nav{
     color: lightgray;
 }
 
+.navTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 /* Limited Offer Style */
 .navItem .limitedOffer {
     font-size: 20px;
@@ -171,6 +185,7 @@ position: relative;
  background-color: #111;
  cursor: pointer;
  outline: none;
+
 }
 /*style the Button within the hover*/
 .sliderWrapper .sliderItem .buyButton:hover{
@@ -254,11 +269,10 @@ position: relative;
 /*products*/
 /* products/wrap styles */
 .product{
-    height: 100vh;
+    /* height: 100vh; */
     background-color:whitesmoke;
     position: relative;
     clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
-    overflow: hidden;
 }
 
 /*payment Btn*/
@@ -321,7 +335,6 @@ position: relative;
   .sm {
     width: 30%;
   }
-  
   .payButton {
     position: absolute;
     height: 40px;
@@ -338,7 +351,7 @@ position: relative;
   
   .close {
     width: 20px;
-    height: 20px;
+    height: 23px;
     position: absolute;
     background-color: gray;
     color: white;
@@ -411,7 +424,7 @@ position: relative;
    border-radius: 15px; 
    border: none;
    width: 150px;
-   height: 40px;
+   height: 44px;
    padding: 10px 20px;
    color: #fff;
    background-color: rgb(126, 108, 9);
@@ -433,8 +446,8 @@ position: relative;
     font-size:30px;
     font-weight: 900;
     text-align: center;
-    width: 40px;
-    height: 30px;
+    width: 50px;
+    height: 45px;
     position: fixed;
     right: 10px;
     bottom: 20px;
@@ -463,14 +476,10 @@ position: relative;
   flex: 1;
   padding: 20px;
 }
-
-
 .gallery .galleryItem .galleryImg{
   width: 100%;
 }
-
 /*new session sec*/
-
 .newSeason {
   display: flex;
 }
@@ -583,24 +592,6 @@ width: 200px;
   letter-spacing: 1.1;
 }
 
-/* // X-Small devices (portrait phones, less than 576px)
-@media (max-width: 575.98px) { ... }
-
-// Small devices (landscape phones, less than 768px)
-@media (max-width: 767.98px) { ... }
-
-// Medium devices (tablets, less than 992px)
-@media (max-width: 991.98px) { ... }
-
-// Large devices (desktops, less than 1200px)
-@media (max-width: 1199.98px) { ... }
-
-// X-Large devices (large desktops, less than 1400px)
-@media (max-width: 1399.98px) { ... }
-
-// XX-Large devices (larger desktops)
-// No media query since the xxl breakpoint has no upper bound on its width */
-
 @media screen and (max-width:480px) {
   nav{
     padding: 20px;
@@ -609,7 +600,8 @@ width: 200px;
     display: none;
   }
   .NavBottom{
-    flex-wrap: wrap;
+    display: none;
+    /* flex-wrap: wrap; */
   }
   .NavBottom .menuItem{
     margin: 20px;
@@ -640,6 +632,7 @@ width: 200px;
     top: 0;
     right: 0;
     z-index: 1;
+    margin-right: 1px;
   }
   .features{
     flex-direction: column;
@@ -667,7 +660,7 @@ width: 200px;
   }
 
   .productDetails .productTitle{
-    font-size: 50px;
+    font-size: 35px;
     margin: 0;
   }
 .productButton{
@@ -715,13 +708,23 @@ footer{
   width: 90%;
   padding: 20px;
 }
+
 }
 
 /* Medium devices (tablets, less than 992px) */
 @media screen and (max-width: 991.98px) { 
+  nav{
+font-size: 11px;
+  }
+  .navItem .limitedOffer{
+    font-style: 18px;
+  }
  .search{
-  padding: 8px 15px;
+  padding: 6px 15px;
   border-radius: 8px;
+ }
+ .sliderWrapper .sliderItem .buyButton{
+  z-index: 10;
  }
  .product{
   clip-path: none;
@@ -729,17 +732,126 @@ footer{
  .productDetails{
   top:0;
   width: 50%;
-  padding: 10px;
+  padding: 8px;
+}
+.sizes .size{
+  padding: 5px 15px;
+  margin-right: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  overflow: hidden;
+  text-align: center;
 }
  .productDetails .productTitle{
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 400;
 }
 .productDetails .productDesc{
-  font-size: 20px;
+  font-size: 16px;
+  overflow: hidden;
 }
 .footerRight{
   padding: 20px;
 }
+}
+.Nav-Mob{
+  display: none;
+}
+/* hamburger menu */
+@media screen and (max-width:480px) {
+  hamburger menu
+  nav{
+    padding: 10px 15px;
+}
 
+  .Nav-Mob{
+    position:absolute;
+    top: 0;
+    left: -150px;
+    z-index: 10;
+    display: flex;
+    font-size: 12px;
+    background-color:rgba(0, 0,0, .5);
+    cursor: pointer;
+    transition: 1.5s;
+  }
+  .nav-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: inherit;
+  }
+.limitedOfferMob{
+  color:green;
+}
+
+.limitedOfferMob:hover{
+  color:rgb(6, 217, 6);
+}
+  .menu-btn{
+    position: relative;
+    width: 35px;
+    height: 30px;
+    /* border: 2px solid #fff; */
+    transition: all .5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .menu-btn_burger{
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(255, 101,47, 0);
+    transition: all .5s ease-in-out;
+  
+  }
+  .menu-btn_burger::before,
+  .menu-btn_burger::after{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(255, 101,47, 0);
+    transition: all .5s ease-in-out;
+  }
+  .menu-btn_burger::before{
+    transform: translateY(-8px);
+  }
+  .menu-btn_burger::after{
+    transform: translateY(8px);
+  }
+
+  /*limited display none*/
+  .navItem .limitedOffer{
+    display: none;
+  }
+   /* aniamtion */
+ .menu-btn.open .menu-btn_burger{
+   transform: translate(-20px);
+   background-color: transparent;
+   box-shadow: none;
+ }
+ 
+ .menu-btn.open .menu-btn_burger::before{
+  transform: rotate(45deg) translate(8px,-8px);
+ }
+ .menu-btn.open .menu-btn_burger::after{
+  transform: rotate(-45deg) translate(8px,8px);
+ }
+
+}
+/*dark mode */
+#toggleDark{
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+.darkMode{
+  background-color:rgb(26,26,26);
+  color: wheat;
+  transition: 2s;
 }

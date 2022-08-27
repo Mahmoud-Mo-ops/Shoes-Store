@@ -95,15 +95,16 @@ const menuItem =document.querySelectorAll(".menuItem");
      let productPrice=document.querySelector('.productPrice');
      let productColors=document.querySelectorAll('.color');
 
-     menuItem.forEach((ele,index)=>{
+    menuItem.forEach((ele,index)=>{
         ele.addEventListener('click',function(){
+          index=index%5
         //change the current slide
         wrapper.style.transform=`translate(${-100 * index}vw)`
         wrapper.style.transition="all 1s ease-in-out";
          //make the choiced ele in the slider active
           
-
         // change the choosen product
+        console.log(products,index)
         choosenProduct=products[index];  // if i make it in variable will be not worked
 
         //change the product
@@ -113,11 +114,13 @@ const menuItem =document.querySelectorAll(".menuItem");
         //change img
         productImg.src=choosenProduct.colors[0].img     
         //assign the color to each element
-       productColors.forEach((color,index)=>{
-        color.style.backgroundColor=choosenProduct.colors[index].code
+       productColors.forEach((color,indexCo)=>{
+        color.style.backgroundColor=choosenProduct.colors[indexCo].code
        });
      });
 });
+
+
 
 // assign item to color
 productColors.forEach((color, indexC) => {
@@ -155,23 +158,31 @@ menuItem.forEach((ele)=>{
 
 //make the search active
 const noItem=document.querySelector('.noItem')
+const check=document.querySelector("i")
 //select the input 
 const input =document.querySelector('.search input');
 input.addEventListener('keyup',(e)=>{
   let result=e.target.value.toUpperCase();
   menuItem.forEach((e,indexCh)=>{
+    //solve problem double nav Bar
+    indexCh=indexCh%5
   if(e.innerHTML===result){
     wrapper.style.transform=`translate(${-100 * indexCh}vw)`
+
     e.style.color="wheat";
+    check.style.display="block"
     noItem.style.display="none"
     //MAKE THE PRODUCT SEC TO CHANGE AS WEll
   } else{
     e.style.color="gray";
     noItem.style.display="block"
+    check.style.display="none"
   }
   })
   if(result===""){
     noItem.style.display="none"
+    check.style.display="none"
+
   }
 })
 
@@ -216,3 +227,71 @@ cxlBtn.addEventListener('click',()=>{
   payment.style.display="none"
 })
 
+
+// hamburger menu 
+let hamMenu=document.querySelector('.menu-btn')
+let navItems=document.querySelector('.nav-items')
+let menuopen=false;
+let navMob=document.querySelector(".Nav-Mob");
+hamMenu.addEventListener("click",()=>{
+  if(!menuopen){
+    hamMenu.classList.add("open");
+    navMob.style.left="0";
+    menuopen=true;
+  } else{
+    navMob.style.left="-150px";
+    hamMenu.classList.remove("open")
+    menuopen=false;
+  }
+})
+// Dark mode
+let productSec=document.querySelector('.product');
+//select features section/
+let featureSec=document.querySelector('.features');
+//select button
+let toggle=document.getElementById('toggleDark');
+//select body
+let body=document.querySelector('body');
+
+
+
+
+
+// work on darkMode on localStorag
+
+toggle.addEventListener('click',toggleDark)
+function toggleDark(){
+  this.classList.toggle('bi-moon');
+    if(toggle.classList.contains('bi-moon')){
+              body.classList.add('darkMode');
+              productSec.classList.add('darkMode');
+              featureSec.classList.add('darkMode');
+    } else{
+            body.classList.remove('darkMode');
+            productSec.classList.remove('darkMode');
+            featureSec.classList.remove('darkMode');
+            body.style.transition="2s";
+            productSec.style.transition="2s"
+            featureSec.style.transition="2s"
+      }
+  }
+
+
+// set items on localStorage
+
+
+// toggle.addEventListener('click',function checkStatus(){
+//   this.classList.toggle('bi-moon');
+// if(toggle.classList.contains('bi-moon')){
+//         body.classList.add('dark-mode');
+//         productSec.classList.add('dark-mode');
+//         featureSec.classList.add('dark-mode');
+// } else{
+//       body.classList.remove('dark-mode');
+//       productSec.classList.remove('dark-mode');
+//       featureSec.classList.remove('dark-mode');
+//       body.style.transition="2s";
+//       productSec.style.transition="2s"
+//       featureSec.style.transition="2s"
+// }
+// })

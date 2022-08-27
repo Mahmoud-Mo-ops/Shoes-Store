@@ -8,6 +8,9 @@
     <link rel="shortcut icon" href="../favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- icons bootstap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
     
 </head>
@@ -15,20 +18,29 @@
    <!--NAV BAR-->
    <nav id="nav">
     <nav class="navTop">
+        <!-- bootstap darkMode -->
+        <i class="bi bi-brightness-high-fill light" id="toggleDark"></i>
         <div class="navItem">
             <img src="./photos/sneakers.png" alt="">
         </div>
         <div class="navItem">
             <div class="search">
-                <input type="" placeholder="search..." class="searchInput">
+                <input type="" placeholder="search..." class="searchInput" >
+                <i class="fa fa-check-circle-o"></i>
+
                 <img class="searcIcon" width="20" height="20" src="./photos/search.png">
                 <div class="noItem">no items found!</div>
             </div>
         </div>
-        <div class="navItem">
+        <div class="navItem ">
             <span class="limitedOffer">Limited Offer!</span>
         </div>
-    </nav>
+           <div class="menu-btn">
+            <div class="menu-btn_burger"></div>
+           </div>
+           </div>
+        </nav>
+       </div> 
     <nav class="navBottom">
       <h3 class="menuItem">AIR FORCE</h3>
       <h3 class="menuItem">JORDAN</h3>
@@ -39,6 +51,17 @@
   </nav>
    <!-- slider Bar -->
     <div class="slider">
+        <!-- Nav Mob -->
+        <div class="Nav-Mob">
+            <nav class="nav-items">
+            <h3   class="limitedOfferMob">Limited Offer!</h3>
+             <h3 class="menuItem">AIR FORCE</h3>
+             <h3 class="menuItem">JORDAN</h3>
+             <h3 class="menuItem">BLAZER</h3>
+             <h3 class="menuItem">CRATER</h3>
+             <h3 class="menuItem">HIPPIE</h3>
+           </nav>
+           </div>
         <div class="sliderWrapper">
             <!-- Item 1  Air force-->
             <div class="sliderItem">
@@ -93,7 +116,7 @@
         </div>
     </div>
     <!-- features -->
-    <div class="features">
+    <div class="features" >
         <div class="feature">
             <img src="./photos/shipping.png" alt="" class="featureIcon">
             <span class="featureTitle">FREE SHIPPING</span>
