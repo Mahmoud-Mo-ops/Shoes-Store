@@ -2,8 +2,11 @@
 const wrapper =document.querySelector('.sliderWrapper');
 const slideritem=document.querySelector('.sliderItem');
 const menuItem =document.querySelectorAll(".menuItem");
-
-
+ //select all items in the products
+ let productTitle=document.querySelector('.productTitle');
+ let productImg=document.querySelector('.productImg');
+ let productPrice=document.querySelector('.productPrice');
+ let productColors=document.querySelectorAll('.color');
      const products=[
         //item 1
          {
@@ -86,27 +89,16 @@ const menuItem =document.querySelectorAll(".menuItem");
             ]
         },
      ]
-
-
      let choosenProduct = products[0];
-     //select all items in the products
-     let productTitle=document.querySelector('.productTitle');
-     let productImg=document.querySelector('.productImg');
-     let productPrice=document.querySelector('.productPrice');
-     let productColors=document.querySelectorAll('.color');
-
     menuItem.forEach((ele,index)=>{
         ele.addEventListener('click',function(){
           index=index%5
         //change the current slide
         wrapper.style.transform=`translate(${-100 * index}vw)`
         wrapper.style.transition="all 1s ease-in-out";
-         //make the choiced ele in the slider active
-          
+         //make the choiced ele in the slider active  
         // change the choosen product
-        console.log(products,index)
         choosenProduct=products[index];  // if i make it in variable will be not worked
-
         //change the product
         productTitle.textContent=choosenProduct.title
         // change price
@@ -119,16 +111,12 @@ const menuItem =document.querySelectorAll(".menuItem");
        });
      });
 });
-
-
-
 // assign item to color
 productColors.forEach((color, indexC) => {
   color.addEventListener("click", () => {
     productImg.src = choosenProduct.colors[indexC].img;
   });
 });
-
 //specify the size 
 //select items
 let productSize=document.querySelectorAll(".size")
@@ -143,8 +131,6 @@ productSize.forEach((size,indecS)=>{
     size.classList.add("active")
    })
 })
-
-
 //make the choiced ele in the slider active
 menuItem.forEach((ele)=>{
    ele.addEventListener("click",()=>{
@@ -155,10 +141,9 @@ menuItem.forEach((ele)=>{
     ele.style.color="wheat"
    })
 })
-
 //make the search active
-const noItem=document.querySelector('.noItem')
-const check=document.querySelector("i")
+const noItem=document.querySelector('.noItem');
+const check=document.querySelector(".search i");
 //select the input 
 const input =document.querySelector('.search input');
 input.addEventListener('keyup',(e)=>{
@@ -168,31 +153,26 @@ input.addEventListener('keyup',(e)=>{
     indexCh=indexCh%5
   if(e.innerHTML===result){
     wrapper.style.transform=`translate(${-100 * indexCh}vw)`
-
     e.style.color="wheat";
     check.style.display="block"
     noItem.style.display="none"
     //MAKE THE PRODUCT SEC TO CHANGE AS WEll
   } else{
     e.style.color="gray";
-    noItem.style.display="block"
-    check.style.display="none"
+    noItem.style.display="block";
+    check.style.display="none";
   }
   })
   if(result===""){
-    noItem.style.display="none"
-    check.style.display="none"
+    noItem.style.display="none";
+    check.style.display="none";
 
   }
 })
-
-
 //onLoad 
 window.onload=function(){
-  menuItem[0].style.color="wheat"
+  menuItem[0].style.color="wheat";
 }
-
-
 /*UP BTN*/
 /*select Btn*/
 let up=document.querySelector('.up');
@@ -212,7 +192,6 @@ up.addEventListener('click',()=>{
 		behavior:"smooth",
   })
 })
-
 // work on payment Btn
 //select pay&X&
 let payBtn=document.querySelector('.productButton');
@@ -226,8 +205,6 @@ payBtn.addEventListener('click',()=>{
 cxlBtn.addEventListener('click',()=>{
   payment.style.display="none"
 })
-
-
 // hamburger menu 
 let hamMenu=document.querySelector('.menu-btn')
 let navItems=document.querySelector('.nav-items')
@@ -252,13 +229,7 @@ let featureSec=document.querySelector('.features');
 let toggle=document.getElementById('toggleDark');
 //select body
 let body=document.querySelector('body');
-
-
-
-
-
 // work on darkMode on localStorag
-
 toggle.addEventListener('click',toggleDark)
 function toggleDark(){
   this.classList.toggle('bi-moon');
@@ -275,23 +246,49 @@ function toggleDark(){
             featureSec.style.transition="2s"
       }
   }
+//delay when scrolling
+const features=document.querySelector('.features');
+const feature=document.querySelectorAll(".feature");
+const car=document.querySelector("#car");
+const deliveryTitle=document.querySelector('#car~.featureTitle');
+const deliveryDescription=document.querySelector('#car~.featureDesc');
+const refund=document.querySelector("#refund");
+const gift=document.querySelector("#gift");
+const contact=document.querySelector("#contact");
+const product=document.querySelector('#product');
+const image=document.querySelector(".product .productImg");
+const productDetails=document.querySelector(".productDetails");
+const gallery=document.querySelector(".gallery");
+const choosenStyle=document.querySelector(".newSeason .nsItem:nth-child(2)");
+const nsItem=document.querySelector(".nsItem");
+//delay on feature 
+window.onscroll=function (){
+  if(window.scrollY >= features.offsetTop-500){
+    feature.forEach((ele)=>{
+      car.style.left="0";
+      deliveryTitle.style.bottom="0";
+      deliveryDescription.style.bottom="0";
+      refund.style.bottom="0";
+      gift.style.top="0";
+      contact.style.right="0";
+      ele.style.zIndex="15";
+    })
+    // delay on product
+    if(window.scrollY >= product.offsetTop-300){
+      image.style.left="0";
+      productDetails.style.right="0";
+      productDetails.style.top="10%";
+    }
+    // delay on gallary
+    if(window.scrollY >= gallery.offsetTop-900){
+      gallery.style.bottom="0";
+    }
+    //delay new setion
+    if(window.scrollY >= nsItem.offsetTop-200){
+      choosenStyle.style.bottom="0";
+    }
+  }
+};
+ 
 
 
-// set items on localStorage
-
-
-// toggle.addEventListener('click',function checkStatus(){
-//   this.classList.toggle('bi-moon');
-// if(toggle.classList.contains('bi-moon')){
-//         body.classList.add('dark-mode');
-//         productSec.classList.add('dark-mode');
-//         featureSec.classList.add('dark-mode');
-// } else{
-//       body.classList.remove('dark-mode');
-//       productSec.classList.remove('dark-mode');
-//       featureSec.classList.remove('dark-mode');
-//       body.style.transition="2s";
-//       productSec.style.transition="2s"
-//       featureSec.style.transition="2s"
-// }
-// })

@@ -5,7 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Nike Store</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="shortcut icon" href="../favicon.png">
+    <!-- <link rel="shortcut icon" href="../favicon.png"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -27,7 +27,6 @@
             <div class="search">
                 <input type="" placeholder="search..." class="searchInput" >
                 <i class="fa fa-check-circle-o"></i>
-
                 <img class="searcIcon" width="20" height="20" src="./photos/search.png">
                 <div class="noItem">no items found!</div>
             </div>
@@ -118,21 +117,21 @@
     <!-- features -->
     <div class="features" >
         <div class="feature">
-            <img src="./photos/shipping.png" alt="" class="featureIcon">
+            <img src="./photos/shipping.png" alt="" class="featureIcon" id="car">
             <span class="featureTitle">FREE SHIPPING</span>
             <span class="featureDesc">Free worldwide shipping on all orders.</span>
         </div>
-        <div class="feature">
+        <div class="feature" id="refund">
             <img class="featureIcon" src="./photos/return.png" alt="">
             <span class="featureTitle">30 DAYS RETURN</span>
             <span class="featureDesc">No question return and easy refund in 14 days.</span>
         </div>
-        <div class="feature">
+        <div class="feature" id="gift">
             <img class="featureIcon" src="./photos/gift.png" alt="">
-            <span class="featureTitle">GIFT CARDS</span>
+            <span class="featureTitle" >GIFT CARDS</span>
             <span class="featureDesc">Buy gift cards and use coupon codes easily.</span>
         </div>
-        <div class="feature">
+        <div class="feature" id="contact">
             <img class="featureIcon" src="./photos/contact.png" alt="">
             <span class="featureTitle">CONTACT US!</span>
             <span class="featureDesc">Keep in touch via email and support system.</span>
@@ -290,12 +289,6 @@
     <div class="up">
         <i class="fa fa-angle-double-up"></i>   
     </div>
-
-    <!-- <div class="test">
-        <div class="test1">differnt between inhert and intial and unset</div>
-        <p class="test2">inhert and intial and unset</p>
-       <button>click</button>
-    </div> -->
     <script src='main.js'></script>
 </body>
 </html>

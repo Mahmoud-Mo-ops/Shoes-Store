@@ -245,6 +245,7 @@ position: relative;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    z-index: -10;
 }
 
 /*style image*/
@@ -252,6 +253,33 @@ position: relative;
     width: 50px;
     height: 50px;
     margin-bottom: 20px;
+}
+/*transition when make scroll with feature section*/
+#car{
+   position: relative;
+   left: -200;
+   transition: all 9s ease-in-out;
+}
+
+#car~.featureDesc,#car~.featureTitle{
+  position: relative;
+  bottom: -100;
+  transition: all 3s ease-in-out;
+}
+#refund{
+  position: relative;
+  bottom: -100;
+  transition: all 3s ease-in-out;
+}
+#gift{
+  position: relative;
+  top: -50px;
+  transition: all 3s ease-in-out;
+}
+#contact{
+  position: relative;
+  right: -30;
+  transition: all 4s ease-in-out;
 }
  /* style first Title */
 .features .feature .featureTitle{
@@ -265,7 +293,6 @@ position: relative;
     width: 50%;
    min-height: 100px;
 }
-
 /*products*/
 /* products/wrap styles */
 .product{
@@ -367,15 +394,19 @@ position: relative;
 /*image style*/
 .product .productImg{
     width: 50%;
+    position: relative;
+    left: -430;
+    transition: all 5s;
 }
 
 /*productDetails style*/
 .productDetails{
     position: absolute;
-    top: 10%;
+    top: 00%;
     right: 0;
     width: 40%;
     padding: 50px;
+    transition: all 5s;
 }
 
 /*style title*/
@@ -469,6 +500,9 @@ position: relative;
   display: flex;
   padding: 50px;
   width: auto;
+  position: relative;
+  bottom: -300px;
+  transition: all 2s linear;
 }
 
 .gallery .galleryItem{
@@ -497,6 +531,9 @@ position: relative;
  color: #fff;
  font-size: 30px;
  font-weight: 600;
+ position: relative;
+ bottom: -100;
+ transition: all 2s linear;
 }
 .newSeason .nsItem:nth-child(2) .nsButton{
    background-color: #fff;
@@ -708,6 +745,8 @@ footer{
   width: 90%;
   padding: 20px;
 }
+/* hamburger Menu */
+
 
 }
 
@@ -759,7 +798,7 @@ font-size: 11px;
 }
 /* hamburger menu */
 @media screen and (max-width:480px) {
-  hamburger menu
+  /* hamburger menu */
   nav{
     padding: 10px 15px;
 }
