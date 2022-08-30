@@ -170,28 +170,11 @@ input.addEventListener('keyup',(e)=>{
   }
 })
 //onLoad 
+const delayLoad=document.querySelector("#delayLoad");
 window.onload=function(){
   menuItem[0].style.color="wheat";
+  delayLoad.style.opacity="1";
 }
-/*UP BTN*/
-/*select Btn*/
-let up=document.querySelector('.up');
-/*make Btn appear in scroll Bttuon and in vers*/
-window.onscroll=function(){
-  if(window.scrollY >= 45){
-    up.style.display="block";
-  } else{
-  	up.style.display="none";
-  }
- }
-//scroll to top 
-up.addEventListener('click',()=>{
-  window.scrollTo({
-    left:0,
-		top:0,
-		behavior:"smooth",
-  })
-})
 // work on payment Btn
 //select pay&X&
 let payBtn=document.querySelector('.productButton');
@@ -261,6 +244,7 @@ const productDetails=document.querySelector(".productDetails");
 const gallery=document.querySelector(".gallery");
 const choosenStyle=document.querySelector(".newSeason .nsItem:nth-child(2)");
 const nsItem=document.querySelector(".nsItem");
+let up=document.querySelector('.up');
 //delay on feature 
 window.onscroll=function (){
   if(window.scrollY >= features.offsetTop-500){
@@ -270,8 +254,9 @@ window.onscroll=function (){
       deliveryDescription.style.bottom="0";
       refund.style.bottom="0";
       gift.style.top="0";
+      gift.style.opacity="1"
       contact.style.right="0";
-      ele.style.zIndex="15";
+      ele.style.opacity="1";
     })
     // delay on product
     if(window.scrollY >= product.offsetTop-300){
@@ -288,7 +273,20 @@ window.onscroll=function (){
       choosenStyle.style.bottom="0";
     }
   }
+//scroll to top
+  if(window.scrollY >= 45){
+    up.style.display="block";
+  } else{
+  	up.style.display="none";
+  }
+  up.addEventListener('click',()=>{
+    window.scrollTo({
+      left:0,
+      top:0,
+      behavior:"smooth",
+    })
+  })  
 };
- 
+
 
 
