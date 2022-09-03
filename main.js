@@ -169,12 +169,19 @@ input.addEventListener('keyup',(e)=>{
 
   }
 })
+
 //onLoad 
+// select first item with id to make delay
 const delayLoad=document.querySelector("#delayLoad");
 window.onload=function(){
+  // make toggle btn dark moon
+  toggle.classList.add('bi-moon');
+  // make first item (sliderbar) active
   menuItem[0].style.color="wheat";
+  // make transition delay for first item
   delayLoad.style.opacity="1";
 }
+
 // work on payment Btn
 //select pay&X&
 let payBtn=document.querySelector('.productButton');
@@ -212,11 +219,12 @@ let featureSec=document.querySelector('.features');
 let toggle=document.getElementById('toggleDark');
 //select body
 let body=document.querySelector('body');
-// work on darkMode on localStorag
-toggle.addEventListener('click',toggleDark)
+toggle.addEventListener('click',toggleDark);
 function toggleDark(){
-  this.classList.toggle('bi-moon');
-    if(toggle.classList.contains('bi-moon')){
+  this.style.transition="all 1s linear";
+  this.style.transform="rotate(360deg)";
+   this.classList.toggle('bi-moon');
+    if(!toggle.classList.contains('bi-moon')){                      
               body.classList.add('darkMode');
               productSec.classList.add('darkMode');
               featureSec.classList.add('darkMode');
@@ -225,10 +233,12 @@ function toggleDark(){
             productSec.classList.remove('darkMode');
             featureSec.classList.remove('darkMode');
             body.style.transition="2s";
-            productSec.style.transition="2s"
-            featureSec.style.transition="2s"
+            productSec.style.transition="2s";
+            featureSec.style.transition="2s";
+      
       }
   }
+  
 //delay when scrolling
 const features=document.querySelector('.features');
 const feature=document.querySelectorAll(".feature");
@@ -247,7 +257,7 @@ const nsItem=document.querySelector(".nsItem");
 let up=document.querySelector('.up');
 //delay on feature 
 window.onscroll=function (){
-  if(window.scrollY >= features.offsetTop-500){
+  if(window.scrollY >= features.offsetTop-580){
     feature.forEach((ele)=>{
       car.style.left="0";
       deliveryTitle.style.bottom="0";
@@ -269,7 +279,7 @@ window.onscroll=function (){
       gallery.style.bottom="0";
     }
     //delay new setion
-    if(window.scrollY >= nsItem.offsetTop-200){
+    if(window.scrollY >= nsItem.offsetTop-600){
       choosenStyle.style.bottom="0";
     }
   }
@@ -290,3 +300,28 @@ window.onscroll=function (){
 
 
 
+
+// feedbacks
+
+const reviews=document.querySelector('.reviews');
+const reviewBtn=document.querySelector('.review');
+const spans=document.querySelectorAll('.feedback span');
+const backdrop=document.querySelector('.backdrop');
+reviewBtn.addEventListener('click',()=>{
+  reviews.style.display="flex";
+  backdrop.style.display="block";
+  setTimeout(()=>{
+    spans.forEach((span)=>{
+      span.style.width=span.dataset.width;
+    })
+  },200)
+ 
+})
+
+backdrop.addEventListener('click',()=>{
+  reviews.style.display="none";
+  backdrop.style.display="none";
+  spans.forEach((span)=>{
+    span.style.width='0';
+  })
+})
