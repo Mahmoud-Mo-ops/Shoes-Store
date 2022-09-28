@@ -19,7 +19,6 @@ nav{
     padding: 15px 40px;
     /* padding: 20px 50px; */
 }
-
 /*logo+searchBar+offer  style*/
 .navTop{
     display: flex;
@@ -27,7 +26,6 @@ nav{
     align-items: center;
     justify-content: space-between;
 }
-
 /* Search bar style */
 .search{
   position: relative;
@@ -40,7 +38,6 @@ nav{
      border-radius: 10px;
      margin: 0 15px;
 }
-
 /* input style */
 .search input{
     border: none;
@@ -73,7 +70,6 @@ nav{
  .search input::placeholder{
     color: lightgray;
 }
-
 .navTop {
   display: flex;
   justify-content: space-between;
@@ -84,7 +80,6 @@ nav{
     font-size: 20px;
     cursor: pointer;
 }
-
 /*Limited offer style hover*/
 .navItem .limitedOffer::after{
     content:'';
@@ -94,7 +89,6 @@ nav{
     background-color: green;
     transition: width .3s;
 }
-
 .navItem .limitedOffer:hover::after{
     width: 100%;
 }
@@ -103,7 +97,6 @@ nav{
     display: flex;
     justify-content: center;
 }
-
 .NavBottom .menuItem{
     margin-right: 50px; 
     color:lightgray;
@@ -115,9 +108,7 @@ nav{
 /* .NavBottom .menuItem:hover{
     color: #fff;
 } */
-
 /* SLIDER BAR STYLE */
-
 .slider{
   background: url("https://images.unsplash.com/photo-1604147495798-57beb5d6af73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80");
  /*this property use the wohle background (5 pics) within 100%*/
@@ -134,7 +125,7 @@ nav{
 /* style container of items */
 .sliderWrapper .sliderItem{
 position: relative;
- width: 100vw;
+ width:100vw;
  display: flex;
  align-items: center;
  justify-content: center;
@@ -143,7 +134,6 @@ position: relative;
   opacity: 0;
   transition: all 2s linear;
 }
-
 /*make the image on the circle*/
 .sliderWrapper .sliderItem .sliderImg{
     z-index: 1;
@@ -189,7 +179,6 @@ position: relative;
  background-color: #111;
  cursor: pointer;
  outline: none;
-
 }
 /*style the Button within the hover*/
 .sliderWrapper .sliderItem .buyButton:hover{
@@ -197,7 +186,6 @@ position: relative;
     background-color: floralwhite;
     transition: .3s;
 }
-
 /*style backgroundColor(Shoes) for each ele using The :nth-child() pseudo-class */
 .sliderWrapper .sliderItem:nth-child(1) .sliderBg{
   background-color:#369e62;
@@ -242,7 +230,6 @@ position: relative;
         padding: 50px;
         background-color:whitesmoke;
     }
-
 /*style each div (feature)*/
 .features .feature{
     display: flex;
@@ -251,7 +238,6 @@ position: relative;
     text-align: center;
     opacity: 0;
 }
-
 /*style image*/
 .features .feature img{
     width: 50px;
@@ -264,7 +250,6 @@ position: relative;
    left: -200;
    transition: all 9s ease-in-out;
 }
-
 #car~.featureDesc,#car~.featureTitle{
   position: relative;
   bottom: -100;
@@ -291,7 +276,6 @@ position: relative;
     font-weight: 600;
     margin: 20px;
 }
-
 .features .feature .featureDesc{
     color: gray;
     width: 50%;
@@ -305,7 +289,6 @@ position: relative;
     clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
 }
 /*review Section*/
-
 /*backdrop*/
 .backdrop{
   position: fixed;
@@ -329,7 +312,7 @@ position: relative;
   width: 80px;
   height: 40px;
   position: relative;
-  top: -25px;
+  top: -100px;
   border-radius: 8px;
   background-color: #000;
   color:gold;
@@ -337,7 +320,6 @@ position: relative;
   border: none;
   cursor: pointer;
 }
-
 .reviews{
   width: 40%;
   height: 35%;
@@ -351,7 +333,6 @@ position: relative;
   justify-content: space-around;
   z-index: 2;
 }
-
 .reviews .feedbacks{
   display: flex;
   justify-content: space-around;
@@ -369,7 +350,6 @@ position: relative;
   outline: none;
   border: none;
   transition: width 2s linear;
-
 }
 .reviews .feedbacks .feedback span{
   position: absolute;
@@ -379,7 +359,6 @@ position: relative;
  background-color:gold;
  transition: width 1s linear;
 }
-
 /*payment Btn*/
 .payment {
     width: 500px;
@@ -397,12 +376,10 @@ position: relative;
     -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
   }
-  
   .payTitle {
     font-size: 20px;
     color: lightgray;
   }
-  
   .name,.number,.Adresse{
     display: flex;
     flex-direction: column;
@@ -411,7 +388,6 @@ position: relative;
     font-size: 18px;
     font-weight: 300;
   }
-  
   .payInput {
     padding: 10px;
     margin: 10px 0px;
@@ -419,24 +395,19 @@ position: relative;
     outline: none;
     border-bottom: 1px solid gray;
   }
-  
   .payInput::placeholder {
     color: rgb(163, 163, 163);
   }
-  
   .cardIcons {
     display: flex;
   }
-  
   .cardIcon {
     margin-right: 10px;
   }
-  
   .cardInfo {
     display: flex;
     justify-content: space-between;
   }
-  
   .sm {
     width: 30%;
   }
@@ -453,7 +424,6 @@ position: relative;
     border: none;
     cursor: pointer;
   }
-  
   .close {
     width: 20px;
     height: 23px;
@@ -468,7 +438,6 @@ position: relative;
     cursor: pointer;
     padding: 2px;
   }
-
 /*image style*/
 .product .productImg{
     width: 50%;
@@ -480,17 +449,18 @@ position: relative;
 /*productDetails style*/
 .productDetails{
     position: absolute;
-    top: 00%;
+    top: 35px;
     right: 0;
     width: 40%;
-    padding: 50px;
+    padding: 7px;
     transition: all 5s;
 }
 
 /*style title*/
 .productDetails .productTitle{
-    font-size: 75px;
-    font-weight: 600;
+    font-size: 4.5rem;
+    font-weight: 550;
+    margin: 0;
 }
 /*style description*/
 .productDetails .productDesc{
@@ -545,8 +515,6 @@ position: relative;
 .productDetails .productButton:hover{
    background-color: rgba(126, 108, 9,.9);
 }
-
-
 /*style up Button*/
 .up{
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
@@ -565,14 +533,11 @@ position: relative;
     cursor: pointer;
     display: none;
 }
-
 /* style for each element size */
 .active {
     background-color: #000;
     color: #fff;
 }
-
-
 /*gallary sec*/
 .gallery{
   display: flex;
@@ -582,9 +547,7 @@ position: relative;
   bottom: -300px;
   transition: all 2s linear;
 }
-
 .gallery .galleryItem{
-  /* flex: flex-grow flex-shrink flex-basis|auto|initial|inherit; */
   flex: 1;
   padding: 20px;
 }
@@ -599,7 +562,6 @@ position: relative;
 .newSeason .nsItem {
   flex: 1;
 }
-
 .newSeason .nsItem:nth-child(2) {
   display: flex;
   flex-direction: column;
@@ -625,7 +587,6 @@ position: relative;
    outline: none;
    border: none;
 }
-
 .newSeason .nsItem:nth-child(2) .nsButton:hover{
   box-shadow: 2px 2px 2px wheat;
   transition: all .2s;
@@ -634,13 +595,11 @@ position: relative;
   width: 100%;
   height: 100%;
 }
-
 /*footer Sec*/
 footer{
   display: flex;
   background-color: rgb(0, 0, 0,.8);
 }
-
 .footerLeft{
   flex: 2;
   display: flex;
@@ -696,8 +655,6 @@ width: 200px;
 .FIcon:hover{
   background-color: yellow;
 }
-
-
 .fIcon:nth-child(1){
   margin-left: 0;
 }
@@ -709,8 +666,7 @@ width: 200px;
 .Nav-Mob{
   display: none;
 }
-
-@media screen and (max-width:480px) {
+@media screen and (max-width:576px) {
   nav{
     padding: 20px;
   }
@@ -761,11 +717,9 @@ width: 200px;
     flex-direction: column;
     align-items: center;
   }
-
   .productImg{
     width: 80%;
   }
-
   /*review section*/
   .title{
  font-size: 20px;
@@ -787,7 +741,6 @@ width: 200px;
     position: relative;
     top: 0;
   }
-
   .productDetails .productTitle{
     font-size: 35px;
     margin: 0;
@@ -821,18 +774,15 @@ footer{
   flex-direction: column;
   align-items: center;
 }
-
 .footerLeft{
   padding: 20px;
   width: 90%;
 }
-
 .footerRight{
   padding: 20px;
   width: 90%;
   align-items: center;
 }
-
 .payment{
   width: 90%;
   padding: 20px;
@@ -847,7 +797,6 @@ footer{
   nav{
     padding: 8px 15px;
 }
-
   .Nav-Mob{
     position:absolute;
     top: 0;
@@ -869,7 +818,6 @@ footer{
 .limitedOfferMob{
   color:green;
 }
-
 .limitedOfferMob:hover{
   color:rgb(6, 217, 6);
 }
@@ -877,7 +825,6 @@ footer{
     position: relative;
     width: 35px;
     height: 30px;
-    /* border: 2px solid #fff; */
     transition: all .5s ease-in-out;
     display: flex;
     justify-content: center;
@@ -890,8 +837,8 @@ footer{
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(255, 101,47, 0);
     transition: all .5s ease-in-out;
-  
   }
+
   .menu-btn_burger::before,
   .menu-btn_burger::after{
     content: '';
@@ -940,13 +887,33 @@ footer{
   transition: 2s;
 }
 
+
+@media screen and (max-width: 770px){ 
+  nav {
+    padding: 6px 7px;
+}
+.search {
+  padding: 5px 8px;
+}
+.navItem img{
+  padding-left: 5px;
+}
+.productDetails .productTitle {
+  font-size: 2rem;
+}
+.review{
+  top: 3px;
+}
+
+}
+
 /* Medium devices (tablets, less than 992px) */
-@media screen and (max-width: 991.98px) { 
+@media screen and (max-width: 991.98px){ 
   nav{
 font-size: 11px;
   }
   .navItem .limitedOffer{
-    font-style: 18px;
+    font-size: 15px;
   }
  .search{
   padding: 6px 15px;
@@ -963,6 +930,17 @@ font-size: 11px;
   width: 50%;
   padding: 8px;
 }
+.productPrice{
+  margin: 0;
+}
+
+.colors{
+  padding-top: 6px;
+
+}
+.sizes {
+  padding-bottom: 4px
+}
 .sizes .size{
   padding: 5px 15px;
   margin-right: 6px;
@@ -976,8 +954,17 @@ font-size: 11px;
   font-weight: 400;
 }
 .productDetails .productDesc{
-  font-size: 16px;
+  font-size: 1rem;
   overflow: hidden;
+  padding:5px 0;
+}
+.productDetails .productButton {
+  width: 100px;
+  font-size: 0.7rem;
+  position: relative;
+  bottom: 24px;
+  right: -3px;
+  padding: 8px;
 }
 .footerRight{
   padding: 20px;
@@ -993,5 +980,6 @@ font-size: 11px;
   bottom: 0;
 }
 }
-
-
+.activ{
+  color: wheat;
+}

@@ -91,7 +91,13 @@ const menuItem =document.querySelectorAll(".menuItem");
      ]
      let choosenProduct = products[0];
     menuItem.forEach((ele,index)=>{
-        ele.addEventListener('click',function(){
+     ele.addEventListener('click',function clicked(){
+          //delete active color from others
+          menuItem.forEach((ele)=>{
+                  ele.style.color="gray"
+                })
+          // add color wheat color to the active ele
+            ele.style.color="wheat";
           index=index%5
         //change the current slide
         wrapper.style.transform=`translate(${-100 * index}vw)`
@@ -111,9 +117,10 @@ const menuItem =document.querySelectorAll(".menuItem");
        });
      });
 });
+
 // assign item to color
 productColors.forEach((color, indexC) => {
-  color.addEventListener("click", () => {
+  color.addEventListener("click",()=> {
     productImg.src = choosenProduct.colors[indexC].img;
   });
 });
@@ -131,43 +138,16 @@ productSize.forEach((size,indecS)=>{
     size.classList.add("active")
    })
 })
-//make the choiced ele in the slider active
-menuItem.forEach((ele)=>{
-   ele.addEventListener("click",()=>{
-    menuItem.forEach((ele)=>{
-      ele.style.color="gray"
-    })
-    // add active ele
-    ele.style.color="wheat"
-   })
-})
-//make the search active
-const noItem=document.querySelector('.noItem');
-const check=document.querySelector(".search i");
+
+
 //select the input 
 const input =document.querySelector('.search input');
-input.addEventListener('keyup',(e)=>{
-  let result=e.target.value.toUpperCase();
-  menuItem.forEach((e,indexCh)=>{
-    //solve problem double nav Bar
-    indexCh=indexCh%5
-  if(e.innerHTML===result){
-    wrapper.style.transform=`translate(${-100 * indexCh}vw)`
-    e.style.color="wheat";
-    check.style.display="block"
-    noItem.style.display="none"
-    //MAKE THE PRODUCT SEC TO CHANGE AS WEll
-  } else{
-    e.style.color="gray";
-    noItem.style.display="block";
-    check.style.display="none";
-  }
+input.addEventListener('keyup',(ele)=>{  
+  let result=ele.target.value.toUpperCase();
+  menuItem.forEach((ele)=>{
+    ele.innerHTML===result ?ele.click():ele.style.color="gray";
   })
-  if(result===""){
-    noItem.style.display="none";
-    check.style.display="none";
 
-  }
 })
 
 //onLoad 
@@ -271,8 +251,7 @@ window.onscroll=function (){
     // delay on product
     if(window.scrollY >= product.offsetTop-300){
       image.style.left="0";
-      productDetails.style.right="0";
-      productDetails.style.top="10%";
+      // productDetails.style.top="70";
     }
     // delay on gallary
     if(window.scrollY >= gallery.offsetTop-900){
@@ -298,11 +277,7 @@ window.onscroll=function (){
   })  
 };
 
-
-
-
 // feedbacks
-
 const reviews=document.querySelector('.reviews');
 const reviewBtn=document.querySelector('.review');
 const spans=document.querySelectorAll('.feedback span');
@@ -317,7 +292,6 @@ reviewBtn.addEventListener('click',()=>{
   },200)
  
 })
-
 backdrop.addEventListener('click',()=>{
   reviews.style.display="none";
   backdrop.style.display="none";
